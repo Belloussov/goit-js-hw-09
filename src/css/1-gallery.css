@@ -1,0 +1,20 @@
+body {
+  max-width: 1440px;
+}
+
+.gallery {
+  height: 696px;
+
+  background: #fff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 156px;
+  padding-right: 156px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+}
