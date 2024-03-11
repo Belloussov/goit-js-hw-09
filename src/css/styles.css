@@ -22,3 +22,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.list {
+  list-style-type: none;
+}
