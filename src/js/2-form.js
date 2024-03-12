@@ -5,29 +5,27 @@ let info = { email: '', message: '' };
 form.addEventListener('input', handleInput);
 
 function handleInput(evt) {
-  evt.preventDefault();
-
-  const email = form.elements.email.value.trim();
-  const message = form.elements.message.value.trim();
-
-  info.email = email;
-  info.message = message;
+  info.email = form.elements.email.value.trim();
+  info.message = form.elements.message.value.trim();
 
   localStorage.setItem(LS_KEY, JSON.stringify(info));
 }
 
-const jsn = localStorage.getItem(LS_KEY);
+//const jsn = localStorage.getItem(LS_KEY);
 
-const dataLs = JSON.parse(jsn);
+const dataLs = JSON.parse(localStorage.getItem(LS_KEY));
+
 if (dataLs !== null) {
   form.elements.email.value = dataLs.email;
   form.elements.message.value = dataLs.message;
+
+  info = dataLs;
 }
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
 
-  if (info.email === '' || info.message === '') {
+  if (info.email.length === 0 || info.message.length === 0) {
     alert('All form fields must be filled in');
     return;
   } else {

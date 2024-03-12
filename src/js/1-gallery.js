@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -64,7 +67,7 @@ const images = [
   },
 ];
 
-const listGallery = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery');
 
 const galleryElements = images
   .map(
@@ -77,12 +80,9 @@ const galleryElements = images
   )
   .join('');
 
-listGallery.insertAdjacentHTML('beforeend', galleryElements);
+galleryList.insertAdjacentHTML('beforeend', galleryElements);
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-const lightbox = new SimpleLightbox('.gallery-link', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
